@@ -1,0 +1,169 @@
+
+<!DOCTYPE HTML>
+<html>
+  <head>
+    <style>
+      body {
+	background-color:#000000;
+        margin: 0px;
+        padding: 0px;
+      }
+	canvas{
+		padding: 0;
+		margin: auto;
+		display: block;
+	}
+	div.save{
+		position: absolute;
+		left: 10px;
+		top: 10px;
+	}
+	a.option{
+		color: #FFFFFF;
+		font-family: "Helvetica";
+		font-weight: BOLD;
+		font-size: 2em;
+		text-decoration: none;
+	}
+	a:hover{
+		cursor: pointer;
+		color: #AAAAAA;
+	}
+	a:active{
+		color: #FFFFFF;
+	}
+    </style>
+  </head>
+
+  <body>
+    <div id="paint">
+        <canvas id="myCanvas"></canvas>
+    </div>
+
+   	<div class="save">
+	<a id="savelink" class="option">SAVE</a>
+    	<br />
+	<a id="clearcanvas" class="option">CLEAR</a>
+	</div>
+
+
+    <script>
+var canvas = document.getElementById('myCanvas');
+var ctx = canvas.getContext('2d');
+
+canvas.width = window.innerWidth;
+canvas.height = window.innerHeight;
+
+var gradient = ctx.createLinearGradient(0, canvas.height, canvas.width, 0);
+function setCanvas() {	
+	gradient.addColorStop(0, "#000000");
+	gradient.addColorStop(.8, "#EC2027");
+	ctx.fillStyle = gradient;
+	ctx.fillRect(0,0, canvas.width, canvas.height);
+};
+
+window.onload = setCanvas();
+
+var brush = new Image();
+brush.src = "/pntBrush.png";
+var mouse = {x: 0, y: 0};
+
+canvas.addEventListener('mousemove', function(e) {
+  mouse.x = e.pageX - this.offsetLeft;
+  mouse.y = e.pageY - this.offsetTop;
+}, false);
+
+ctx.lineWidth = 3;
+ctx.lineJoin = 'round';
+ctx.lineCap = 'round';
+ctx.strokeStyle = '#00CC99';
+
+canvas.addEventListener('mousedown', function(e) {
+   // ctx.drawImage(brush, mouse.x-50, mouse.y-50, 100, 100);
+   // ctx.beginPath();
+   // ctx.moveTo(mouse.x, mouse.y);
+
+    canvas.addEventListener('mousemove', onPaint, false);
+}, false);
+
+canvas.addEventListener('mouseup', function() {
+    canvas.removeEventListener('mousemove', onPaint, false);
+}, false);
+
+var onPaint = function() {
+   ctx.drawImage(brush, mouse.x-50, mouse.y-50, 100, 100);
+   // ctx.lineTo(mouse.x, mouse.y);
+   // ctx.stroke();
+};
+
+////////////////CLEAR CANVAS
+var clear = document.getElementById('clearcanvas');
+
+clear.addEventListener('click', function(e) {	
+	setCanvas();
+});
+
+//////////////SAVE IMAGE EVENT
+var link = document.getElementById('savelink');
+
+link.addEventListener('click', function(e) {
+	link.href = canvas.toDataURL();
+	link.download = 'myPainting.png';
+}, false);
+
+/////////////////TOUCH EVENTS
+canvas.addEventListener('touchstart', function(e) {
+	mouse = getTouchPos(canvas, e);
+	var touch = e.touches[0];
+	var mouseEvent = new MouseEvent('mousedown', {
+		clientX: touch.clientX,
+		clientY: touch.clientY
+	});
+	canvas.dispatchEvent(mouseEvent);
+}, false);
+
+canvas.addEventListener('touchend', function(e) {
+	var mouseEvent = new MouseEvent('mouseup', {});
+	canvas.dispatchEvent(mouseEvent);
+}, false);
+
+canvas.addEventListener('touchmove', function(e) {
+	var touch = e.touches[0];
+	var mouseEvent = new MouseEvent('mousemove', {
+		clientX: touch.clientX,
+		clientY: touch.clientY
+	});
+	canvas.dispatchEvent(mouseEvent);
+}, false);
+
+function getTouchPos(canvasDom, touchEvent) {
+	var rect = canvasDom.getBoundingClientRect();
+	return {
+		x: touchEvent.touches[0].clientX - rect.left,
+		y: touchEvent.touches[0].clientY -rect.top
+	};
+}
+
+/////PREVENT CANVAS SCROLL DURING TOUCH EVENTS
+document.body.addEventListener('touchstart', function(e) {
+	if (e.target == canvas) {
+		e.preventDefault();
+	}
+}, false);
+
+document.body.addEventListener('touchend', function(e) {
+	if (e.target == canvas) {
+		e.preventDefault();
+	}
+}, false);
+
+document.body.addEventListener('touchmove', function(e) {
+	if (e.target == canvas) {
+		e.preventDefault();
+	}
+}, false);
+
+
+    </script>
+  </body>
+</html>

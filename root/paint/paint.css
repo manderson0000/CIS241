@@ -1,0 +1,36 @@
+///paint.html css file
+
+html, body{
+	background-color:#000000;
+        margin: 0px;
+        padding: 0px;
+}
+
+canvas{
+	padding: 0;
+	margin: auto;
+	display: block;
+}
+
+div.save{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+}
+
+a.option{
+	color: #FFFFFF;
+	font-family: "Helvetica";
+	font-weight: BOLD;
+	font-size: 2em;
+	text-decoration: none;
+}
+
+a:hover{
+	cursor: pointer;
+	color: #AAAAAA;
+}
+
+a:active{
+	color: #FFFFFF;
+}
