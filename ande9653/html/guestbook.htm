@@ -1,0 +1,87 @@
+<!DOCTYPE HTML>
+
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="author" content="Maxwell Anderson" />
+        <meta name="keywords" content="Student, Portfolio, Demonstration, Design, Development, HTML5, CSS3, JS, EDCC, CIS 241" />
+        <meta name="description" content="EDCC CIS 241 Web Development I, Competency Demonstration: HTML5, CSS3, & JS - Maxwell Anderson, Fall 2018" />
+        <meta http-equiv="default-style" content="../css/myStyle.css" />
+        <meta name="robots" content="noindex" />
+
+        <title>CIS 241 Interests - Maxwell Anderson</title>
+
+        <link rel="icon" type="image/x-icon" href="../images/ma.ico" />
+        <link rel="stylesheet" type="text/css" href="../css/myStyle.css" />
+
+    </head>
+
+<body style="background-color:#222222;">
+
+    <!-- <p style="font-family:Helvetica; font-weight:bold; font-size:16em; color:#FFFFFF;">hiiiiiiiiiiiiiii</p>
+    -->
+    <table style="height:100%; width:100%; border:5px; border-color:#FFFFFF;">
+        <tr>
+            <!-- NAVIGATION COLUMN w/ REFLECTIONS SPECIFIC TRANSFORM -->
+            <td class="nav">
+                <a class="nav" href="home.htm">about &nbsp;</a><br />
+                <a class="nav" href="resume.htm">resume &nbsp;</a><br />
+                <a class="nav" href="interests.htm">interests &nbsp;</a><br />
+                <a class="nav" href="reflections.htm">reflections &nbsp;</a><br />
+                <a class="current" href="guestbook.htm">guestbook &nbsp;</a>
+            </td>
+            <!--CONTENT CONTAINER COLUMN -->
+            <td class="container">
+            <!-- CONTENT TABLE -->
+            <table class="content">
+                <tr>
+                <td>
+                    <span class="header"> drop me a line! &nbsp;&nbsp;&nbsp; </span>
+                    <br /><br />
+
+                        <form action="mailto:m.anderson@edmail.edcc.edu" method="post" enctype="text/plain" id="guestform">
+                            <label for="name">Name:</label>
+                            <br />
+                            <input id="name" type="text" name="name" placeholder="Your name here...">
+                            <br />
+                            <label for="email">Email:</label>
+                            <br />
+                            <input id="email" type="text" name="email" placeholder="Your email address...">
+                            <br />
+                            <label for="interests">Interests:</label>
+                            <br />
+                                <select id="interests" name="interests">
+                                    <option value="Design">Design</option>
+                                    <option value="Development">Development</option>
+                                    <option value="Music">Music</option>
+                                    <option value="Outdoors">Outdoors</option>
+                                </select>
+                            <br />
+                            <label for="source">How did you get here?</label>
+                            <br />
+                                <select id="source" name="source">
+                                    <option value="Recommendation">Recommendation</option>
+                                    <option value="Search">Search Results</option>
+                                    <option value="Link">Linked from other site</option>
+                                    <option value="Instructor">I'm the instructor</option>
+                                </select>
+                            <br />
+                            <label for="comments">Comments:</label>
+                            <br />
+                            <textarea id="comments" name="message" cols="40" placeholder="Ideas and suggestions welcome!"></textarea>
+                            <br />
+                            <input type="submit" value="Send"><input type="reset" value="Reset">
+                        </form>
+
+                </td>
+                </tr>
+            </table>
+            </td>
+        </tr>
+    </table>
+
+</body>
+
+</html>
+

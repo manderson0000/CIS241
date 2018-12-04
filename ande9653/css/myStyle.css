@@ -1,0 +1,191 @@
+/*  myStyle.css */
+
+/* NAVIGATION AND CONTENT CONTAINER TEMPLATE STYLES */
+
+html, body {
+    margin:0;
+    padding:0;
+    height:100%;
+    border:none
+}
+
+td.nav {
+    width:15%;
+    min-width:199px;
+    background-color:#FFFFFF;
+    text-align:right;
+    vertical-align:top;
+    padding-top:40px;
+    padding-right:20px;
+}
+
+td.container {
+    width:85%;
+    min-width:322px;
+    background-color:#FFFFFF;
+    padding-top:40px;
+}
+
+table.content {
+    width:844px;
+    margin-left:auto;
+    margin-right:auto;
+    border-spacing:0;
+    border-collapse:collapse;
+}
+
+span.header {
+    font-family:Helvetica;
+    font-size:2em;
+    color:#FFFFFF;
+    background-color:#000000;
+}
+
+span.text {
+    font-family:Source Code Pro;
+    font-size: 1em;
+    color:#000000;
+}
+
+a.text {
+    font-family:Source Code Pro;
+    font-size: 1em;
+    color:#000000;
+    text-decoration:none;
+}
+
+/* NAVIGATION LINK STYLES */
+
+a.nav {
+    display:inline-block;
+    width:100%;
+    font-family:Helvetica;
+    font-size:2em;
+    color:#000000;
+    text-decoration:none;
+}
+
+a.current {
+            display:inline-block;
+            width:100%;
+            font-family:Helvetica;
+            font-size:2em;
+            text-decoration:none;
+            background-color:#000000;
+            color:#FFFFFF;
+}
+
+a:hover {
+    color:#AAAAAA;
+}
+
+a:active {
+    color:#FFFFFF;
+    background-color:#000000;
+}
+
+ul {
+    list-style:none;
+}
+
+li {
+    font-family:Helvetica;
+    font-Size:4em;
+}
+
+/* ABOUT/HOME PAGE SPECIFIC STYLES */
+
+table.maBrand {
+    min-width:250px;
+    border-spacing:0;
+    border-collapse:collapse;
+    background-image:url("../images/glitch.png");
+}
+
+table.insideBrand {
+    margin-left:auto;
+    margin-right:auto;
+    border-spacing:0;
+    border-collapse:collapse;
+}
+
+.hover:hover {
+    opacity:0.25;
+}
+
+/* REFLECTIONS PAGE SPECIFIC STYLES */
+
+.title {
+    font-family:Helvetica;
+    font-size: 3em;
+}
+
+span.reflectext {
+    font-family:Source Code Pro;
+    font-size: 1em;
+    color:#000000;
+}
+
+td.reflections {
+    width:15%;
+    min-width:199px;
+    background-color:#FFFFFF;
+    text-align:left;
+    vertical-align:top;
+    padding-top:40px;
+    padding-left:20px;
+    -webkit-transform:rotateY(180deg);
+    -moz-transform:rotateY(180deg);
+    -o-transform:rotateY(180deg);
+    -ms-transform:rotateY(180deg);
+    unicode-bidi:bidi-override;
+    direction:rtl;
+}
+
+/* GUESTBOOK PAGE FORM SPECIFIC STYLES */
+
+form {
+    font-family:Source Code Pro;
+    font-size: 1em;
+    color:#000000;
+}
+
+input[type=text], select {
+    width:50%;
+    padding:13px 21px;
+    margin:13px;
+}
+
+textarea {
+    width:50%;
+    padding:13px 21px;
+    margin:13px;
+}
+
+input[type=submit] {
+    width:25%;
+    background-color:#000000;
+    color:#FFFFFF;
+    padding:13px 21px;
+    margin:13px;
+    border:none;
+    cursor:pointer;
+}
+
+input[type=reset] {
+    width:25%;
+    background-color:#000000;
+    color:#FFFFFF;
+    padding:13px 21px;
+    margin:13px;
+    border:none;
+    cursor:pointer;
+}
+
+input[type=submit]:hover {
+    background-color:#AAAAAA;
+}
+
+input[type=reset]:hover {
+    background-color:#AAAAAA;
+}
